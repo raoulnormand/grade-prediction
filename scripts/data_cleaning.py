@@ -22,7 +22,8 @@ def clean_df(grades_df):
     cols = ["Email", "Quiz", "HW", "Participation", "Final", "Letter grade"]
     cleaned_df = grades_df[cols].copy()
 
-    # Fina exam columns, labeled "Midterm" or "Exam". Files also include the number of missed exams so these columns are excluded.
+    # Final exam columns, labeled "Midterm" or "Exam".
+    # Files also include the number of missed exams so these columns are excluded.
     exam_cols = [
         col
         for col in grades_df.columns
@@ -33,10 +34,10 @@ def clean_df(grades_df):
     return cleaned_df
 
 
-# Clean all files.
+# Clean and combine all files.
 
 
-def main():
+def combine_files():
     """
     Combine all files, and delete duplicate emails, then delete email for anonymity.
     """
@@ -58,5 +59,21 @@ def main():
     all_grades.to_csv("data/final/all_grades.csv", index=False)
 
 
+# Remove outliers where final or midterm grade = 0.
+
+
+def remove_outliers():
+    """
+    Removes outliers, where final or midterm grade is 0.
+    """
+    grades_df = pd.read_csv("data/final/all_grades.csv")
+    row_to_keep = (grades_df["Midterm"] != 0) & (grades_df["Final"] != 0)
+    grades_df = grades_df.loc[row_to_keep, :]
+    grades_df.to_csv("data/final/all_grades_no_outliers.csv", index=False)
+
+
+# Run the functions
+
 if __name__ == "__main__":
-    main()
+    combine_files()
+    remove_outliers()
