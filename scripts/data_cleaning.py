@@ -28,7 +28,7 @@ def clean_df(grades_df):
         for col in grades_df.columns
         if ("Midterm" in col or "Exam" in col) and "missed" not in col
     ]
-    cleaned_df["Exams"] = grades_df[exam_cols].mean(axis=1)
+    cleaned_df["Midterm"] = grades_df[exam_cols].mean(axis=1)
 
     return cleaned_df
 
