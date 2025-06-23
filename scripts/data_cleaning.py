@@ -1,5 +1,12 @@
 """
-Functions for cleaning the raw data.
+Functions for cleaning the raw data. All files include
+_ Quiz average (out of 20, labeled "Quiz").
+_ Homework average (out of 20, labeled "HW").
+_ Participation grade (out of 5, labeled "Participation").
+_ Midterm grades (1 or 2 for each class, labeled "Midterm" or "Exam").
+_ Final exam grade (labeled "Final")
+_ Letter grade (A, A-, B+, B, B-, C+, C, D, F, labeled "Letter grade").
+
 """
 
 import os
@@ -15,6 +22,7 @@ def clean_df(grades_df):
     cols = ["Email", "Quiz", "HW", "Participation", "Final", "Letter grade"]
     cleaned_df = grades_df[cols].copy()
 
+    # Fina exam columns, labeled "Midterm" or "Exam". Files also include the number of missed exams so these columns are excluded.
     exam_cols = [
         col
         for col in grades_df.columns
