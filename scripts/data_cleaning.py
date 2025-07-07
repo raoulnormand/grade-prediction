@@ -72,8 +72,15 @@ def remove_outliers():
     grades_df.to_csv("data/final/all_grades_no_outliers.csv", index=False)
 
 
+# Main function
+
+
+def main():
+    combine_files()
+    remove_outliers()
+
+
 # Run the functions
 
 if __name__ == "__main__":
-    combine_files()
-    remove_outliers()
+    main()
