@@ -1,0 +1,3 @@
+,lin_reg,ridge,lasso,gb_reg
+0,{'poly_feat__degree': 1},"{'poly_feat__degree': 1, 'ridge__alpha': np.float64(10.0)}","{'lasso__alpha': np.float64(0.1), 'poly_feat__degree': 1}","{'gb_reg__max_depth': 1, 'gb_reg__n_estimators': 100, 'poly_feat__degree': 2}"
+1,0.5794747753471859,0.5795305002420075,0.5797313987576956,0.5822970298969425

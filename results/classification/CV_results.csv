@@ -1,0 +1,7 @@
+,log_reg,knn,svm_lin,svm_rbf,gaussian_nb,random_forest
+0,"{'log_reg__C': np.float64(1.0), 'log_reg__penalty': 'l2'}",{'knn__n_neighbors': 10},{'svm_lin__C': np.float64(10.0)},"{'svm_rbf__C': np.float64(1000.0), 'svm_rbf__gamma': np.float64(0.0001)}",{},"{'random_forest__max_depth': 5, 'random_forest__n_estimators': 500}"
+1,0.40954545454545455,0.38316804407713495,0.45593663911845733,0.4559504132231405,0.38960055096418733,0.41278236914600547
+2,"{'log_reg__C': np.float64(100.0), 'log_reg__penalty': 'l1'}",{'knn__n_neighbors': 10},{'svm_lin__C': np.float64(10.0)},"{'svm_rbf__C': np.float64(100.0), 'svm_rbf__gamma': np.float64(0.01)}",{},"{'random_forest__max_depth': 5, 'random_forest__n_estimators': 1000}"
+3,0.3116733285446952,0.35475143581654867,0.39521908714616755,0.3856425298143649,0.36976958946370314,0.3602108238127842
+4,"{'log_reg__C': np.float64(100.0), 'log_reg__penalty': 'l1'}",{'knn__n_neighbors': 10},{'svm_lin__C': np.float64(10.0)},"{'svm_rbf__C': np.float64(100.0), 'svm_rbf__gamma': np.float64(0.01)}",{},"{'random_forest__max_depth': 5, 'random_forest__n_estimators': 500}"
+5,-0.12260243721927214,-0.12420141092400298,-0.11159934226333035,-0.11053644346769506,-0.11805751970571601,-0.11987648082344227

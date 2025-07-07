@@ -1,0 +1,7 @@
+,log_reg,svm_lin,svm_rbf
+0,"{'log_reg__C': np.float64(1.0), 'log_reg__penalty': 'l1', 'poly_feat__degree': 2}","{'poly_feat__degree': 1, 'svm_lin__C': np.float64(10.0)}","{'poly_feat__degree': 1, 'svm_rbf__C': np.float64(1000.0), 'svm_rbf__gamma': np.float64(0.0001)}"
+1,0.43271349862258945,0.45593663911845733,0.4559504132231405
+2,"{'log_reg__C': np.float64(10.0), 'log_reg__penalty': 'l1', 'poly_feat__degree': 2}","{'poly_feat__degree': 1, 'svm_lin__C': np.float64(10.0)}","{'poly_feat__degree': 1, 'svm_rbf__C': np.float64(100.0), 'svm_rbf__gamma': np.float64(0.01)}"
+3,0.3931751858084347,0.39521908714616755,0.3856425298143649
+4,"{'log_reg__C': np.float64(1.0), 'log_reg__penalty': 'l1', 'poly_feat__degree': 3}","{'poly_feat__degree': 2, 'svm_lin__C': np.float64(1.0)}","{'poly_feat__degree': 1, 'svm_rbf__C': np.float64(100.0), 'svm_rbf__gamma': np.float64(0.01)}"
+5,-0.11222891058302827,-0.11070239102539674,-0.11053644346769506

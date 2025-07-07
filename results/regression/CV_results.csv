@@ -1,0 +1,3 @@
+,lin_reg,ridge,lasso,knn,random_forest,gb_reg
+0,{},{'ridge__alpha': np.float64(10.0)},{'lasso__alpha': np.float64(0.1)},{'knn__n_neighbors': 10},"{'random_forest__max_depth': 3, 'random_forest__n_estimators': 500}","{'gb_reg__max_depth': 1, 'gb_reg__n_estimators': 100}"
+1,0.579474775347186,0.5795305002420074,0.5797313987576956,0.5178052239723949,0.5694660685671498,0.57958739294117
