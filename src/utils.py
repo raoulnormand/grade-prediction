@@ -79,7 +79,7 @@ def l2_loss(y_true, y_pred):
     grade_conversion = np.vectorize(lambda x: grade_value[x])
     scores_true = grade_conversion(y_true)
     scores_pred = grade_conversion(y_pred)
-    return 1 / y_true.shape[0] * np.sum((scores_true - scores_pred) ** 2) ** (1 / 2)
+    return (1 / y_true.shape[0] * np.sum((scores_true - scores_pred) ** 2)) ** (1 / 2)
 
 
 l2_score = make_scorer(l2_loss, greater_is_better=False)
