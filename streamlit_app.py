@@ -22,10 +22,8 @@ hw = st.text_input("Homework average, out of **20**.")
 participation = st.text_input("Participation, out of **5**.")
 midterm = st.text_input("Midterm average, out of **100**.")
 
-grades = [float(quiz), float(hw), float(participation), float(midterm)]
-
-
 if st.button("Show me my final exam grade!"):
+    grades = [float(quiz), float(hw), float(participation), float(midterm)]
     grade = predict_final(grades)
     st.write(f"**Predicted final exam grade: :primary[{grade[0]:.1f}]**")
     st.write(
@@ -36,6 +34,7 @@ if st.button("Show me my final exam grade!"):
     )
 
 if st.button("Show me my letter grade!"):
+    grades = [float(quiz), float(hw), float(participation), float(midterm)]
     grade_prediction, dic_proba = predict_letter(grades)
 
     # Reorder the dictionary and turn to percentage
