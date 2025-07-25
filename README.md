@@ -1,6 +1,10 @@
 # grade-prediction
 An analysis and prediction models for grades based on real data from NYU classes.
 
+# Web app
+
+Try it [here](https://grades-prediction.streamlit.app/)!
+
 # Introduction
 
 The data for this project are grades for the classes Math for Economics I, II, and III, from 2022 to 2023. The grades are the following.
