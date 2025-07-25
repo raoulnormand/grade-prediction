@@ -10,8 +10,11 @@ _ Letter grade (A, A-, B+, B, B-, C+, C, D, F, labeled "Letter grade").
 """
 
 import os
+from pathlib import Path
 
 import pandas as pd
+
+main_dir = str(Path(__file__).parent.parent)
 
 
 def clean_df(grades_df):
@@ -41,22 +44,22 @@ def combine_files():
     """
     Combine all files, and delete duplicate emails, then delete email for anonymity.
     """
-    file_names = os.listdir("data/raw")
+    file_names = os.listdir(main_dir + "/data/raw")
 
     for file_name in file_names:
-        grades_df = pd.read_csv("data/raw/" + file_name, index_col=False)
+        grades_df = pd.read_csv(main_dir + "/data/raw/" + file_name, index_col=False)
         cleaned_df = clean_df(grades_df)
-        cleaned_df.to_csv("data/cleaned/" + file_name, index=False)
+        cleaned_df.to_csv(main_dir + "/data/cleaned/" + file_name, index=False)
 
     dfs = [
-        pd.read_csv("data/cleaned/" + file_name, index_col=False)
+        pd.read_csv(main_dir + "/data/cleaned/" + file_name, index_col=False)
         for file_name in file_names
     ]
 
     all_grades = pd.concat(dfs, ignore_index=True)
     all_grades.drop_duplicates(subset="Email", inplace=True)
     all_grades.drop("Email", axis=1, inplace=True)
-    all_grades.to_csv("data/final/all_grades.csv", index=False)
+    all_grades.to_csv(main_dir + "/data/final/all_grades.csv", index=False)
 
 
 # Remove outliers where final or midterm grade = 0.
@@ -66,16 +69,19 @@ def remove_outliers():
     """
     Removes outliers, where final or midterm grade is 0.
     """
-    grades_df = pd.read_csv("data/final/all_grades.csv")
+    grades_df = pd.read_csv(main_dir + "/data/final/all_grades.csv")
     row_to_keep = (grades_df["Midterm"] != 0) & (grades_df["Final"] != 0)
     grades_df = grades_df.loc[row_to_keep, :]
-    grades_df.to_csv("data/final/all_grades_no_outliers.csv", index=False)
+    grades_df.to_csv(main_dir + "/data/final/all_grades_no_outliers.csv", index=False)
 
 
 # Main function
 
 
 def main():
+    """
+    Main file.
+    """
     combine_files()
     remove_outliers()
 

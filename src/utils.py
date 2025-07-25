@@ -2,6 +2,8 @@
 Various functions for training models and computing scores.
 """
 
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 from sklearn.metrics import make_scorer
@@ -21,7 +23,8 @@ def get_data(classification=False):
         target = "Letter grade"
     else:
         target = "Final"
-    grades = pd.read_csv("../data/final/all_grades_no_outliers.csv")
+    main_dir = str(Path(__file__).parent.parent)
+    grades = pd.read_csv(main_dir + "/data/final/all_grades_no_outliers.csv")
     X = grades[features]
     y = grades[target]
 
